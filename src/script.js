@@ -35,7 +35,7 @@ import bot from './telegramBot.js'
             return {
                 code: item.code,
                 name: item.name,
-                price: item.price,
+                price: `R$ ${item.priceWithDiscount.toFixed(2)}`,
                 image: item.image,
                 link: `https://www.kabum.com.br/produto/${item.code}`,
             };
@@ -52,7 +52,7 @@ import bot from './telegramBot.js'
         const intervalId = setInterval(async () => {
             if (currentIndex < products.length) {
                 const currentProduct = products[currentIndex];
-                const message = `📌 ${currentProduct.name}\n\n💰 Preço: *R$ ${currentProduct.price}* À vista \n\n🔗 Link: ${currentProduct.link}`;
+                const message = `📌 ${currentProduct.name}\n\n💰 Preço: *${currentProduct.price}* À vista \n\n🔗 Link: ${currentProduct.link}`;
                 await bot.telegram.sendMessage(1930678813, message, {
                     parse_mode: "Markdown",
                 });
