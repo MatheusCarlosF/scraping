@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import bot from './telegramBot.js'
 
 (async () => {
-    const browser = await puppeteer.launch({headless: false});
+    const browser = await puppeteer.launch({headless:false});
     const page = await browser.newPage();
     const page2 = await browser.newPage();
 
@@ -53,7 +53,7 @@ import bot from './telegramBot.js'
             if (currentIndex < products.length) {
                 const currentProduct = products[currentIndex];
                 const message = `📌 ${currentProduct.name}\n\n💰 Preço: *${currentProduct.price}* À vista \n\n🔗 Link: ${currentProduct.link}`;
-                await bot.telegram.sendMessage(1930678813, message, {
+                await bot.telegram.sendMessage(-1001897461812, message, {
                     parse_mode: "Markdown",
                 });
                 currentIndex++;
@@ -63,7 +63,7 @@ import bot from './telegramBot.js'
         }, 3000); // 10 segundos em milissegundos
     } else {
         await bot.telegram.sendMessage(
-            1930678813,
+            -1001897461812,
             "Não há produtos disponíveis."
         );
     }
