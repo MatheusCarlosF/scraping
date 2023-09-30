@@ -1,0 +1,18 @@
+version: '3.7'
+
+networks:
+  scraping:
+    driver: bridge
+
+services:
+  scraping:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: scraping
+    volumes:
+      - ./:/home/scraping 
+    ports:
+      - "3000:3000"  # Mapeia a porta 3000 do contêiner para a porta 3000 do host
+    networks:
+      - scraping

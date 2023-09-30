@@ -2,7 +2,10 @@ import puppeteer from 'puppeteer';
 import bot from './telegramBot.js'
 
 (async () => {
-    const browser = await puppeteer.launch({headless:false});
+    const browser = await puppeteer.launch({
+        args: ['--no-sandbox'],
+        headless: false
+    });
     const page = await browser.newPage();
     const page2 = await browser.newPage();
 
