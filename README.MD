@@ -40,7 +40,7 @@ Este é um projeto em Node.js que tem como objetivo coletar informações sobre 
 ### Instalação
 
 1. Clone o repositório:
-- git clone https://github.com/seu-usuario/scraping.git
+- git clone https://github.com/MatheusCarlosF/scraping.git
 - cd scraping:
 
 
