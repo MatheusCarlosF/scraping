@@ -1,5 +1,9 @@
 import { Telegraf } from "telegraf";
+import dotenv from "dotenv"
 
-const bot = new Telegraf("6531224263:AAHNiDaDjdJY3RNkVq0DD2hmhcz23_4nv6A");
+dotenv.config()
+
+const bot = new Telegraf(process.env.TELEGRAM_API_KEY);
+
 
 export default bot;
