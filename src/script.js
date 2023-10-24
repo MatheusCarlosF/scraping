@@ -30,7 +30,6 @@ import bot from './telegramBot.js';
     let currentIndex = 0;
 
     const chatId = process.env.TELEGRAM_CHAT_ID;
-    console.log(`chatId:`, chatId)
     
     if (products.length > 0) {
         const intervalId = setInterval(async () => {
